@@ -9,8 +9,13 @@
 </template>
 
 <script>
+import BaseBadge from "./BaseBadge.vue";
+
 export default {
-  props: ['fullName', 'infoText', 'role'],
+  components: {
+    BaseBadge,
+  },
+  props: ["fullName", "infoText", "role"],
 };
 </script>
 
