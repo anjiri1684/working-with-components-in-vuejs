@@ -1,16 +1,27 @@
 <template>
-  <section>
-    <h2>Available Badges</h2>
-    <ul>
-      <li>
-        <base-badge type="admin" caption="ADMIN"></base-badge>
-      </li>
-      <li>
-        <base-badge type="author" caption="AUTHOR"></base-badge>
-      </li>
-    </ul>
-  </section>
+  <base-card>
+    <template v-slot:header>
+      <h2>Available Badges</h2>
+    </template>
+    <template v-slot:default>
+      <ul>
+        <li>
+          <base-badge type="admin" caption="ADMIN"></base-badge>
+        </li>
+        <li>
+          <base-badge type="author" caption="AUTHOR"></base-badge>
+        </li>
+      </ul>
+    </template>
+  </base-card>
 </template>
+
+<script>
+import BaseCard from "./BaseCard.vue";
+export default {
+  components: { BaseCard },
+};
+</script>
 
 <style scoped>
 section h2 {
@@ -18,13 +29,6 @@ section h2 {
   color: #3a3a3a;
 }
 
-section {
-  margin: 2rem auto;
-  max-width: 30rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  padding: 1rem;
-}
 ul {
   list-style: none;
   margin: 0;
