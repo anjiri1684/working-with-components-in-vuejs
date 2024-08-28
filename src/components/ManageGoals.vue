@@ -5,7 +5,8 @@
     <button @click="addGoal">Add Goal</button>
     <error-alert v-if="inputIsInvalid">
       <p>Input is invalid</p>
-      <p>Please enter at least few characters</p>
+      <p>Please enter at least few characters....</p>
+      <button @click="confirmError">Okay</button>
     </error-alert>
   </div>
 </template>
@@ -27,6 +28,9 @@ export default {
       if (enteredValue.trim() === "") {
         this.inputIsInvalid = true;
       }
+    },
+    confirmError() {
+      this.inputIsInvalid = false;
     },
   },
 };
