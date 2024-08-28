@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header>
+    <header v-if="$slots.header">
       <slot name="header"></slot>
     </header>
     <slot></slot>
@@ -8,10 +8,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    console.log(this.$slots.default);
+  },
+};
 </script>
 
 <style scoped>
+section header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 div {
   margin: 2rem auto;
   max-width: 30rem;
